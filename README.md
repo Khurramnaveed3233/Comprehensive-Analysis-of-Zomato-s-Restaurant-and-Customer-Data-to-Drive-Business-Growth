@@ -20,10 +20,33 @@ The ultimate goal is to provide stakeholders with data-driven recommendations to
 
 The project addresses the following key business questions:
 
-Top-Performing Dishes and Restaurants :
+  1. Top-Performing Dishes and Restaurants :
 
     -  What are the top 5 most-ordered dishes from a specific restaurant?
     -  Which restaurants generate the highest revenue and have the best customer ratings?
+    
+  2. Customer Engagement and Retention :
 
+    - How many customers have placed orders in the last 30 days?
+    - Which customers have not ordered in the last 6 months but were active earlier?
 
+  3. Operational Efficiency :
+
+    - Which restaurants have the fastest average delivery times?
+    - How can we categorize restaurants based on their monthly sales performance?
+
+  4. Referral Program Insights :
+
+    - Who are the top referrers in the referral program?
+    - How can we optimize the referral program to maximize user acquisition?
+
+  5.Marketing and Sales Trends :
+
+    - Which cuisines generate the most revenue?
+    - What dishes experienced the highest surge in orders during flash sales?
+
+  5. Premium Customer Segmentation :
+
+    - Which cities have the highest percentage of premium customers?
+    - How can we target these customers with personalized offers?
 
