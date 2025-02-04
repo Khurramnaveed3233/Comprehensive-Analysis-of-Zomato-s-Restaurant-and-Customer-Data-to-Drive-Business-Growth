@@ -10,9 +10,11 @@ The ultimate goal is to provide stakeholders with data-driven recommendations to
 
 - Understand Customer Behavior : Analyze ordering patterns, preferences, and engagement metrics to identify loyal customers and high-value users.
 - Evaluate Restaurant Performance : Assess revenue generation, average order values, delivery times, and customer ratings to rank and categorize restaurants.
-Optimize Referral Programs : Identify influential referrers and understand the impact of referrals on user acquisition.
-Improve Operational Efficiency : Optimize delivery times, categorize restaurants based on revenue performance, and suggest improvements in resource allocation.
-Enhance Marketing Strategies : Identify trends in cuisine preferences, premium customer segments, and flash sale impacts to guide targeted marketing campaigns.
-Provide Actionable Recommendations : Translate insights into clear, actionable steps for stakeholders to improve customer retention, increase revenue, and enhance overall service 
-quality.
+- Optimize Referral Programs : Identify influential referrers and understand the impact of referrals on user acquisition.
+- Improve Operational Efficiency : Optimize delivery times, categorize restaurants based on revenue performance, and suggest improvements in resource allocation.
+- Enhance Marketing Strategies : Identify trends in cuisine preferences, premium customer segments, and flash sale impacts to guide targeted marketing campaigns.
+- Provide Actionable Recommendations : Translate insights into clear, actionable steps for stakeholders to improve customer retention, increase revenue, and enhance overall service 
+  quality.
+
+
 
