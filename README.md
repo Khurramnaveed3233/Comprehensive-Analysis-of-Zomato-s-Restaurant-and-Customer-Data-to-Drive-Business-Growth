@@ -63,30 +63,30 @@ How We Solved the Business Questions
 
 - **Customer Retention :**
   
- - Launch re-engagement campaigns for inactive users, offering discounts or personalized promotions.
- - Introduce loyalty programs to reward frequent customers.
+  - Launch re-engagement campaigns for inactive users, offering discounts or personalized promotions.
+  - Introduce loyalty programs to reward frequent customers.
 
 - **Restaurant Support :**
   
- - Provide training and resources to restaurants with low ratings to improve service quality.
- - Collaborate with high-revenue restaurants to offer exclusive deals and promotions.
+  - Provide training and resources to restaurants with low ratings to improve service quality.
+  - Collaborate with high-revenue restaurants to offer exclusive deals and promotions.
 
 - **Referral Program Optimization :**
   
- - Increase referral rewards for top referrers to encourage more participation.
- - Use social media and email marketing to promote the referral program.
+  - Increase referral rewards for top referrers to encourage more participation.
+  - Use social media and email marketing to promote the referral program.
 
 - **Operational Improvements :**
   
-- Invest in logistics infrastructure to reduce delivery times for underperforming restaurants.
-- Monitor delivery times regularly to ensure consistency.
+  - Invest in logistics infrastructure to reduce delivery times for underperforming restaurants.
+  - Monitor delivery times regularly to ensure consistency.
 
 - **Targeted Marketing :**
   
- - Focus on promoting high-revenue cuisines in regions where they are popular.
- - Design flash sales and limited-time offers for dishes with high demand.
+  - Focus on promoting high-revenue cuisines in regions where they are popular.
+  - Design flash sales and limited-time offers for dishes with high demand.
 
 - **Premium Customer Engagement :**
   
-- Offer exclusive benefits to premium customers, such as early access to new features or personalized discounts.
-- Expand marketing efforts in cities with a high concentration of premium customers.
+  - Offer exclusive benefits to premium customers, such as early access to new features or personalized discounts.
+  - Expand marketing efforts in cities with a high concentration of premium customers.
