@@ -27,20 +27,34 @@ How We Solved the Business Questions
     - Used SQL queries to extract relevant data from tables such as Orders, UserOrders, RestaurantRevenue, Ratings, and CuisineOrders.
     - Applied advanced SQL techniques like Common Table Expressions (CTEs), Window Functions, and Aggregations to derive meaningful insights.
 
-Statistical Analysis :
-Calculated metrics such as total revenue, average order value, and delivery times using aggregate functions (SUM, AVG, etc.).
-Ranked restaurants and dishes using ROW_NUMBER() and RANK() functions.
+- **Statistical Analysis :**
+  
+  - Calculated metrics such as total revenue, average order value, and delivery times using aggregate functions (SUM, AVG, etc.).
+  - Ranked restaurants and dishes using ROW_NUMBER() and RANK() functions.
 
-Data Visualization :
-Created visualizations using tools like Tableau or Power BI to present trends and patterns in customer behavior, restaurant performance, and revenue distribution.
-Used bar charts, pie charts, and heatmaps to highlight key findings.
+# Extracted Insights
 
-Segmentation and Categorization :
-Segmented restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" categories based on monthly sales.
-Identified premium customers by analyzing spending patterns and frequency of orders.
+- **Customer Behavior :**
+  
+  - Identified loyal customers who frequently place orders and contribute significantly to revenue.
+  - Found that certain users have not placed orders in the last 6 months, indicating potential churn risks.
 
-Anomaly Detection :
-Detected anomalies such as users placing multiple orders within the same minute from different locations using time-based filtering and grouping.
+- **Restaurant Performance :**
 
-Indexing and Optimization :
-Suggested indexing strategies for large datasets to improve query performance, ensuring scalability for millions of rows.
+  - Top-performing restaurants were identified based on revenue, ratings, and delivery times.
+  - Restaurants with low average ratings were flagged for improvement in service quality.
+
+- **Referral Program Impact :**
+  
+  - Direct and indirect referrers were identified, highlighting the effectiveness of the referral program.
+  - Recommendations were made to incentivize top referrers further.
+
+- **Operational Efficiency :**
+  
+  - Restaurants with slow delivery times were identified, suggesting the need for better logistics management.
+  - Flash sales significantly boosted orders for certain dishes, providing insights into customer preferences.
+
+- **Marketing Opportunities :**
+  
+  - Chinese cuisine generated the highest revenue, followed by Italian and Indian cuisines.
+  - Premium customers were concentrated in specific cities, offering opportunities for targeted marketing campaigns.
