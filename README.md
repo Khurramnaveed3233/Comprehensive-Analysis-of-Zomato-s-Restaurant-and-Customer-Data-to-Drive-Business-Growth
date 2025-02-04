@@ -20,33 +20,27 @@ The ultimate goal is to provide stakeholders with data-driven recommendations to
 
 The project addresses the following key business questions:
 
-  1. Top-Performing Dishes and Restaurants :
+How We Solved the Business Questions
 
-    -  What are the top 5 most-ordered dishes from a specific restaurant?
-    -  Which restaurants generate the highest revenue and have the best customer ratings?
-    
-  2. Customer Engagement and Retention :
+- **SQL Queries for Data Extraction :**
+  
+Used SQL queries to extract relevant data from tables such as Orders, UserOrders, RestaurantRevenue, Ratings, and CuisineOrders.
+Applied advanced SQL techniques like Common Table Expressions (CTEs), Window Functions, and Aggregations to derive meaningful insights.
 
-    - How many customers have placed orders in the last 30 days?
-    - Which customers have not ordered in the last 6 months but were active earlier?
+Statistical Analysis :
+Calculated metrics such as total revenue, average order value, and delivery times using aggregate functions (SUM, AVG, etc.).
+Ranked restaurants and dishes using ROW_NUMBER() and RANK() functions.
 
-  3. Operational Efficiency :
+Data Visualization :
+Created visualizations using tools like Tableau or Power BI to present trends and patterns in customer behavior, restaurant performance, and revenue distribution.
+Used bar charts, pie charts, and heatmaps to highlight key findings.
 
-    - Which restaurants have the fastest average delivery times?
-    - How can we categorize restaurants based on their monthly sales performance?
+Segmentation and Categorization :
+Segmented restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" categories based on monthly sales.
+Identified premium customers by analyzing spending patterns and frequency of orders.
 
-  4. Referral Program Insights :
+Anomaly Detection :
+Detected anomalies such as users placing multiple orders within the same minute from different locations using time-based filtering and grouping.
 
-    - Who are the top referrers in the referral program?
-    - How can we optimize the referral program to maximize user acquisition?
-
-  5.Marketing and Sales Trends :
-
-    - Which cuisines generate the most revenue?
-    - What dishes experienced the highest surge in orders during flash sales?
-
-  5. Premium Customer Segmentation :
-
-    - Which cities have the highest percentage of premium customers?
-    - How can we target these customers with personalized offers?
-
+Indexing and Optimization :
+Suggested indexing strategies for large datasets to improve query performance, ensuring scalability for millions of rows.
