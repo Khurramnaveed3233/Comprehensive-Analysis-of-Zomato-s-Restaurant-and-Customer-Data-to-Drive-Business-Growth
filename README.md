@@ -22,8 +22,8 @@ The project addresses the following key business questions:
 
 Top-Performing Dishes and Restaurants :
 
-    What are the top 5 most-ordered dishes from a specific restaurant?
-    Which restaurants generate the highest revenue and have the best customer ratings?
+    -  What are the top 5 most-ordered dishes from a specific restaurant?
+    -  Which restaurants generate the highest revenue and have the best customer ratings?
 
 
 
