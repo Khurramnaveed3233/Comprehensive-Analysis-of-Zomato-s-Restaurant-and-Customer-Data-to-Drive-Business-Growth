@@ -24,8 +24,8 @@ How We Solved the Business Questions
 
 - **SQL Queries for Data Extraction :**
   
-Used SQL queries to extract relevant data from tables such as Orders, UserOrders, RestaurantRevenue, Ratings, and CuisineOrders.
-Applied advanced SQL techniques like Common Table Expressions (CTEs), Window Functions, and Aggregations to derive meaningful insights.
+    - Used SQL queries to extract relevant data from tables such as Orders, UserOrders, RestaurantRevenue, Ratings, and CuisineOrders.
+    - Applied advanced SQL techniques like Common Table Expressions (CTEs), Window Functions, and Aggregations to derive meaningful insights.
 
 Statistical Analysis :
 Calculated metrics such as total revenue, average order value, and delivery times using aggregate functions (SUM, AVG, etc.).
