@@ -6,6 +6,8 @@ The dataset includes information about orders, customers, restaurants, ratings, 
 
 The ultimate goal is to provide stakeholders with data-driven recommendations to make informed decisions and implement strategies that align with Zomato's business objectives.
 
+![SCHEMA](https://github.com/user-attachments/assets/c9ab1a94-37ac-48dc-a6d6-a311f64382b5)
+
 #  Objectives of the Project
 
 - Understand Customer Behavior : Analyze ordering patterns, preferences, and engagement metrics to identify loyal customers and high-value users.
