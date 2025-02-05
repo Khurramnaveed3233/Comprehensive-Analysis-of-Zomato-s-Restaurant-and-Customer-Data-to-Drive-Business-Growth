@@ -78,7 +78,7 @@ How We Solved the Business Questions
        FROM CuisineOrders
        GROUP BY Cuisine;
 
-- ** Write a Query to Find the Rank of Each Restaurant Based on Total Revenue Within Each City.**
+- **Write a Query to Find the Rank of Each Restaurant Based on Total Revenue Within Each City.**
  
         SELECT RestaurantID, City, TotalRevenue, RANK() OVER (PARTITION BY City ORDER BY TotalRevenue DESC) AS Rank
         FROM (
@@ -87,32 +87,32 @@ How We Solved the Business Questions
         GROUP BY RestaurantID, City
         ) AS RevenueByCity;
     
- - ** Categorize Restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" Based on Their Monthly Sales.**
+ - **Categorize Restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" Based on Their Monthly Sales.**
 
-       SELECT RestaurantID, SUM(Amount) AS TotalMonthlyRevenue,
-       CASE
+        SELECT RestaurantID, SUM(Amount) AS TotalMonthlyRevenue,
+        CASE
            WHEN SUM(Amount) > 300 THEN 'High Revenue'
            WHEN SUM(Amount) BETWEEN 150 AND 300 THEN 'Medium Revenue'
            ELSE 'Low Revenue'
            END AS RevenueCategory
-       FROM RestaurantRevenue
-       WHERE MONTH(OrderDate) = MONTH(GETDATE())
-       GROUP BY RestaurantID;
+        FROM RestaurantRevenue
+        WHERE MONTH(OrderDate) = MONTH(GETDATE())
+        GROUP BY RestaurantID;
 
-- ** Write a Query to Find the Top 3 Dishes Sold for Each Restaurant in a Specific City.**
+- **Write a Query to Find the Top 3 Dishes Sold for Each Restaurant in a Specific City.**
 
-      WITH RankedDishes AS (
-      SELECT RestaurantID, City, DishName, SUM(Quantity) AS TotalQuantity,
+       WITH RankedDishes AS (
+       SELECT RestaurantID, City, DishName, SUM(Quantity) AS TotalQuantity,
            RANK() OVER (PARTITION BY RestaurantID ORDER BY SUM(Quantity) DESC) AS Rank
-      FROM Orders
-      WHERE City = 'New York'
-      GROUP BY RestaurantID, City, DishName
-      )
+       FROM Orders
+       WHERE City = 'New York'
+       GROUP BY RestaurantID, City, DishName
+       )
       SELECT RestaurantID, City, DishName, TotalQuantity
       FROM RankedDishes
       WHERE Rank <= 3;
 
-  - ** Use a CTE to Calculate the Monthly Active Users and Their Most Ordered Dish for the Past 6 Months.**
+  - **Use a CTE to Calculate the Monthly Active Users and Their Most Ordered Dish for the Past 6 Months.**
  
         WITH RecentOrders AS (
         SELECT UserID, DishName, FORMAT(OrderDate, 'yyyy-MM') AS Month, COUNT(*) AS OrderCount
