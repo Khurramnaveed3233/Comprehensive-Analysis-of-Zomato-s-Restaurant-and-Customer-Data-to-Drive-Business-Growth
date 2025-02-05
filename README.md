@@ -23,7 +23,7 @@ The project addresses the following key business questions:
 
 How We Solved the Business Questions
 
-  1. Write an SQL query to find the top 5 most-ordered dishes from a given restaurant.
+- **1. Write an SQL query to find the top 5 most-ordered dishes from a given restaurant.**
 
 
 
