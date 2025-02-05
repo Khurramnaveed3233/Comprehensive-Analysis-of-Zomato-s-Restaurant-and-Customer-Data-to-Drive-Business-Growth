@@ -57,13 +57,13 @@ How We Solved the Business Questions
       GROUP BY UserID
       HAVING COUNT(DISTINCT RestaurantID) > 3;
 
-  - **Write a Query to Identify Restaurants Where the Average Order Value Is Higher Than the Overall Average Order Value Across All Restaurants.**
+- **Write a Query to Identify Restaurants Where the Average Order Value Is Higher Than the Overall Average Order Value Across All Restaurants.**
  
-        WITH AvgOrderValue AS (
-        SELECT RestaurantID, AVG(Amount) AS AvgValue
-        FROM RestaurantRevenue
-        GROUP BY RestaurantID
-        ),
+      WITH AvgOrderValue AS (
+      SELECT RestaurantID, AVG(Amount) AS AvgValue
+      FROM RestaurantRevenue
+      GROUP BY RestaurantID
+      ),
         OverallAvg AS (
         SELECT AVG(Amount) AS OverallAverage
         FROM RestaurantRevenue
@@ -72,13 +72,13 @@ How We Solved the Business Questions
         FROM AvgOrderValue
         WHERE AvgValue > (SELECT OverallAverage FROM OverallAvg);
 
-  - **Write a Query to Group Orders by Cuisine Type and Calculate the Total Revenue for Each Cuisine.**
+ - **Write a Query to Group Orders by Cuisine Type and Calculate the Total Revenue for Each Cuisine.**
 
         SELECT Cuisine, SUM(Amount) AS TotalRevenue
         FROM CuisineOrders
         GROUP BY Cuisine;
 
-  - ** Write a Query to Find the Rank of Each Restaurant Based on Total Revenue Within Each City.**
+- ** Write a Query to Find the Rank of Each Restaurant Based on Total Revenue Within Each City.**
  
         SELECT RestaurantID, City, TotalRevenue, RANK() OVER (PARTITION BY City ORDER BY TotalRevenue DESC) AS Rank
         FROM (
