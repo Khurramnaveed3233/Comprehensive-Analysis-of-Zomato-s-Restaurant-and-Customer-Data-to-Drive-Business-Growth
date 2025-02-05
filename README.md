@@ -25,6 +25,73 @@ How We Solved the Business Questions
 
 - **1. Write an SQL query to find the top 5 most-ordered dishes from a given restaurant.**
 
+      SELECT TOP 5 DishName, SUM(Quantity) AS TotalOrders
+      FROM Orders
+      WHERE RestaurantID = 'R101'
+      GROUP BY DishName
+      ORDER BY TotalOrders DESC;
+  
+- **Write a Query to Retrieve All Orders Placed in the Last 30 Days for a Specific User.**
+
+      SELECT *
+      FROM UserOrders
+      WHERE UserID = 'U123' AND OrderDate >= DATEADD(DAY, -30, GETDATE());
+  
+- **Write a Query to Retrieve All Orders Placed in the Last 30 Days for a Specific User.**
+
+      SELECT SUM(Amount) AS TotalRevenue
+      FROM RestaurantRevenue
+      WHERE OrderDate >= DATEADD(MONTH, -1, GETDATE());
+
+- **Write a Query to Retrieve the Top 10 Restaurants with the Highest Average Customer Rating.**
+
+      SELECT TOP 10 RestaurantID, AVG(Rating) AS AverageRating
+      FROM Ratings
+      GROUP BY RestaurantID
+      ORDER BY AverageRating DESC;
+
+- **Write a Query to List All Customers Who Have Ordered at Least One Dish from More Than 3 Different Restaurants..**
+
+      SELECT UserID
+      FROM Orders
+      GROUP BY UserID
+      HAVING COUNT(DISTINCT RestaurantID) > 3;
+
+  - **Write a Query to Identify Restaurants Where the Average Order Value Is Higher Than the Overall Average Order Value Across All Restaurants.**
+ 
+        WITH AvgOrderValue AS (
+        SELECT RestaurantID, AVG(Amount) AS AvgValue
+        FROM RestaurantRevenue
+        GROUP BY RestaurantID
+        ),
+        OverallAvg AS (
+        SELECT AVG(Amount) AS OverallAverage
+        FROM RestaurantRevenue
+        )
+        SELECT RestaurantID, AvgValue
+        FROM AvgOrderValue
+        WHERE AvgValue > (SELECT OverallAverage FROM OverallAvg);
+
+  - **Write a Query to Group Orders by Cuisine Type and Calculate the Total Revenue for Each Cuisine.**
+
+        SELECT Cuisine, SUM(Amount) AS TotalRevenue
+        FROM CuisineOrders
+        GROUP BY Cuisine;
+
+  - ** Write a Query to Find the Rank of Each Restaurant Based on Total Revenue Within Each City.**
+ 
+        SELECT RestaurantID, City, TotalRevenue, RANK() OVER (PARTITION BY City ORDER BY TotalRevenue DESC) AS Rank
+        FROM (
+        SELECT RestaurantID, City, SUM(Amount) AS TotalRevenue
+        FROM CityOrders
+        GROUP BY RestaurantID, City
+        ) AS RevenueByCity;
+    
+ 
+
+
+  
+  
 
 
 
