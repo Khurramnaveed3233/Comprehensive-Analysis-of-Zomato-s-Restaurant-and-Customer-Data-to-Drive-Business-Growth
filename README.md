@@ -23,7 +23,7 @@ The project addresses the following key business questions:
 
 How We Solved the Business Questions
 
-- **1. Write an SQL query to find the top 5 most-ordered dishes from a given restaurant.**
+- **Write an SQL query to find the top 5 most-ordered dishes from a given restaurant.**
 
       SELECT TOP 5 DishName, SUM(Quantity) AS TotalOrders
       FROM Orders
@@ -64,19 +64,19 @@ How We Solved the Business Questions
       FROM RestaurantRevenue
       GROUP BY RestaurantID
       ),
-        OverallAvg AS (
-        SELECT AVG(Amount) AS OverallAverage
-        FROM RestaurantRevenue
-        )
-        SELECT RestaurantID, AvgValue
-        FROM AvgOrderValue
-        WHERE AvgValue > (SELECT OverallAverage FROM OverallAvg);
+      OverallAvg AS (
+      SELECT AVG(Amount) AS OverallAverage
+      FROM RestaurantRevenue
+      )
+      SELECT RestaurantID, AvgValue
+      FROM AvgOrderValue
+      WHERE AvgValue > (SELECT OverallAverage FROM OverallAvg);
 
  - **Write a Query to Group Orders by Cuisine Type and Calculate the Total Revenue for Each Cuisine.**
 
-        SELECT Cuisine, SUM(Amount) AS TotalRevenue
-        FROM CuisineOrders
-        GROUP BY Cuisine;
+       SELECT Cuisine, SUM(Amount) AS TotalRevenue
+       FROM CuisineOrders
+       GROUP BY Cuisine;
 
 - ** Write a Query to Find the Rank of Each Restaurant Based on Total Revenue Within Each City.**
  
@@ -87,27 +87,68 @@ How We Solved the Business Questions
         GROUP BY RestaurantID, City
         ) AS RevenueByCity;
     
+ - ** Categorize Restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" Based on Their Monthly Sales.**
+
+       SELECT RestaurantID, SUM(Amount) AS TotalMonthlyRevenue,
+       CASE
+           WHEN SUM(Amount) > 300 THEN 'High Revenue'
+           WHEN SUM(Amount) BETWEEN 150 AND 300 THEN 'Medium Revenue'
+           ELSE 'Low Revenue'
+           END AS RevenueCategory
+       FROM RestaurantRevenue
+       WHERE MONTH(OrderDate) = MONTH(GETDATE())
+       GROUP BY RestaurantID;
+
+- ** Write a Query to Find the Top 3 Dishes Sold for Each Restaurant in a Specific City.**
+
+      WITH RankedDishes AS (
+      SELECT RestaurantID, City, DishName, SUM(Quantity) AS TotalQuantity,
+           RANK() OVER (PARTITION BY RestaurantID ORDER BY SUM(Quantity) DESC) AS Rank
+      FROM Orders
+      WHERE City = 'New York'
+      GROUP BY RestaurantID, City, DishName
+      )
+      SELECT RestaurantID, City, DishName, TotalQuantity
+      FROM RankedDishes
+      WHERE Rank <= 3;
+
+  - ** Use a CTE to Calculate the Monthly Active Users and Their Most Ordered Dish for the Past 6 Months.**
  
+        WITH RecentOrders AS (
+        SELECT UserID, DishName, FORMAT(OrderDate, 'yyyy-MM') AS Month, COUNT(*) AS OrderCount
+        FROM Orders
+        WHERE OrderDate >= DATEADD(MONTH, -6, GETDATE())
+        GROUP BY UserID, DishName, FORMAT(OrderDate, 'yyyy-MM')
+        ),
+        MostOrderedDish AS (
+        SELECT UserID, Month, DishName, OrderCount,
+           RANK() OVER (PARTITION BY UserID, Month ORDER BY OrderCount DESC) AS Rank
+        FROM RecentOrders
+        )
+        SELECT UserID, Month, DishName AS MostOrderedDish
+        FROM MostOrderedDish
+        WHERE Rank = 1;
 
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    - **Write a Query to Find All Users Who Have Referred Others (Directly or Indirectly) to Zomato's Referral Program.**
+   
+          WITH ReferrerHierarchy AS (
+          SELECT ReferrerID, ReferredID
+          FROM Referrals
+          UNION ALL
+          SELECT r.ReferrerID, rf.ReferredID
+          FROM Referrals r
+          INNER JOIN ReferrerHierarchy rf ON r.ReferredID = rf.ReferrerID
+           )
+          SELECT DISTINCT ReferrerID
+          FROM ReferrerHierarchy;
+   
+    - **Write a Query to Retrieve the Top 5 Restaurants With the Fastest Average Delivery Time.**
+   
+          SELECT TOP 5 RestaurantID, AVG(DeliveryTime) AS AvgDeliveryTime
+          FROM DeliveryTimes
+          GROUP BY RestaurantID
+          ORDER BY AvgDeliveryTime ASC;
+    
 # Extracted Insights
 
 - **Customer Behavior :**
