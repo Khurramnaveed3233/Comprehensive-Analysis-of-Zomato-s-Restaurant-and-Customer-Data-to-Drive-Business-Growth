@@ -1,5 +1,9 @@
 # Comprehensive-Analysis-of-Zomato-s-Restaurant-and-Customer-Data-to-Drive-Business-Growth
 
+
+![DALL·E 2025-02-05 04 35 36 - A vibrant and professional cover image in a 16_9 aspect ratio representing Zomato and its association with food, restaurants, and dining experiences  ](https://github.com/user-attachments/assets/583bef2f-b0df-4b51-acdc-585e49100089)
+
+
 This project focuses on analyzing Zomato's restaurant and customer data to extract actionable insights that can help improve operational efficiency, enhance customer experience, and drive revenue growth.
 
 The dataset includes information about orders, customers, restaurants, ratings, cuisines, delivery times, referrals, and more. By leveraging SQL queries, statistical analysis, and visualization tools, the project addresses key business questions such as identifying top-performing restaurants, understanding customer behavior, optimizing delivery times, and improving referral programs.
