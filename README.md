@@ -18,19 +18,28 @@ The ultimate goal is to provide stakeholders with data-driven recommendations to
 
 # Business Questions Addressed
 
+
 The project addresses the following key business questions:
 
 How We Solved the Business Questions
 
-- **SQL Queries for Data Extraction :**
-  
-    - Used SQL queries to extract relevant data from tables such as Orders, UserOrders, RestaurantRevenue, Ratings, and CuisineOrders.
-    - Applied advanced SQL techniques like Common Table Expressions (CTEs), Window Functions, and Aggregations to derive meaningful insights.
+- 1. Write an SQL query to find the top 5 most-ordered dishes from a given restaurant.
 
-- **Statistical Analysis :**
-  
-  - Calculated metrics such as total revenue, average order value, and delivery times using aggregate functions (SUM, AVG, etc.).
-  - Ranked restaurants and dishes using ROW_NUMBER() and RANK() functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Extracted Insights
 
