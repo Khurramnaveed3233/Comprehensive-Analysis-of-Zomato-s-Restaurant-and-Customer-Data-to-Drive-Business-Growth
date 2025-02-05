@@ -87,7 +87,7 @@ How We Solved the Business Questions
         GROUP BY RestaurantID, City
         ) AS RevenueByCity;
     
- - **Categorize Restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" Based on Their Monthly Sales.**
+- **Categorize Restaurants into "High Revenue," "Medium Revenue," and "Low Revenue" Based on Their Monthly Sales.**
 
         SELECT RestaurantID, SUM(Amount) AS TotalMonthlyRevenue,
         CASE
@@ -108,11 +108,11 @@ How We Solved the Business Questions
        WHERE City = 'New York'
        GROUP BY RestaurantID, City, DishName
        )
-      SELECT RestaurantID, City, DishName, TotalQuantity
-      FROM RankedDishes
-      WHERE Rank <= 3;
+       SELECT RestaurantID, City, DishName, TotalQuantity
+       FROM RankedDishes
+       WHERE Rank <= 3;
 
-  - **Use a CTE to Calculate the Monthly Active Users and Their Most Ordered Dish for the Past 6 Months.**
+- **Use a CTE to Calculate the Monthly Active Users and Their Most Ordered Dish for the Past 6 Months.**
  
         WITH RecentOrders AS (
         SELECT UserID, DishName, FORMAT(OrderDate, 'yyyy-MM') AS Month, COUNT(*) AS OrderCount
@@ -129,25 +129,25 @@ How We Solved the Business Questions
         FROM MostOrderedDish
         WHERE Rank = 1;
 
-    - **Write a Query to Find All Users Who Have Referred Others (Directly or Indirectly) to Zomato's Referral Program.**
+ - **Write a Query to Find All Users Who Have Referred Others (Directly or Indirectly) to Zomato's Referral Program.**
    
-          WITH ReferrerHierarchy AS (
-          SELECT ReferrerID, ReferredID
-          FROM Referrals
-          UNION ALL
-          SELECT r.ReferrerID, rf.ReferredID
-          FROM Referrals r
-          INNER JOIN ReferrerHierarchy rf ON r.ReferredID = rf.ReferrerID
-           )
-          SELECT DISTINCT ReferrerID
-          FROM ReferrerHierarchy;
+       WITH ReferrerHierarchy AS (
+       SELECT ReferrerID, ReferredID
+       FROM Referrals
+       UNION ALL
+       SELECT r.ReferrerID, rf.ReferredID
+       FROM Referrals r
+       INNER JOIN ReferrerHierarchy rf ON r.ReferredID = rf.ReferrerID
+         )
+       SELECT DISTINCT ReferrerID
+       FROM ReferrerHierarchy;
    
-    - **Write a Query to Retrieve the Top 5 Restaurants With the Fastest Average Delivery Time.**
+- **Write a Query to Retrieve the Top 5 Restaurants With the Fastest Average Delivery Time.**
    
-          SELECT TOP 5 RestaurantID, AVG(DeliveryTime) AS AvgDeliveryTime
-          FROM DeliveryTimes
-          GROUP BY RestaurantID
-          ORDER BY AvgDeliveryTime ASC;
+      SELECT TOP 5 RestaurantID, AVG(DeliveryTime) AS AvgDeliveryTime
+      FROM DeliveryTimes
+      GROUP BY RestaurantID
+      ORDER BY AvgDeliveryTime ASC;
     
 # Extracted Insights
 
